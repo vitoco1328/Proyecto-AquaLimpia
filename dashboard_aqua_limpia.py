@@ -22,7 +22,12 @@ de plantas de tratamiento de aguas residuales.
 df = pd.read_excel(
     "dataset_set_A_aguas_residuales.xlsx"
 )
+# PREPARACIÓN DE DATOS
+# Conversión fecha
 
+df["fecha_registro"] = pd.to_datetime(
+    df["fecha_registro"]
+)
 # Procesamiento
 df = calcular_eficiencia(df)
 
